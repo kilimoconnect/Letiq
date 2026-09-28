@@ -52,7 +52,7 @@ export function ListToolbar({
           onSubmit={(e) => { e.preventDefault(); nav({ [searchName]: text }); }}
           className="relative min-w-[200px] flex-1 sm:max-w-xs"
         >
-          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -transtone-y-1/2 text-muted-foreground" />
+          <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input value={text} onChange={(e) => setText(e.target.value)} placeholder={searchPlaceholder} className="pl-8" />
         </form>
         {selects.map((s) => (
