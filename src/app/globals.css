@@ -21,7 +21,7 @@
   --popover-foreground: 22 30% 16%;
 
   /* Brand brown */
-  --primary: 22 36% 27%;          /* #5C3D2B */
+  --primary: 22 32% 33%;
   --primary-foreground: 41 38% 95%;
 
   --secondary: 41 30% 92%;        /* cream */
@@ -45,16 +45,16 @@
 
   --border: 36 20% 86%;
   --input: 36 18% 82%;
-  --ring: 22 36% 35%;
+  --ring: 22 32% 40%;
 
-  /* Deep brown sidebar (fixed regardless of surface theme) */
-  --sidebar: 22 36% 17%;
-  --sidebar-foreground: 40 30% 86%;
-  --sidebar-muted: 35 14% 64%;
-  --sidebar-border: 22 26% 25%;
-  --sidebar-accent: 92 20% 57%;   /* #8FA27E sage */
+  /* Warm brown sidebar (fixed regardless of surface theme) */
+  --sidebar: 22 30% 30%;
+  --sidebar-foreground: 40 35% 92%;
+  --sidebar-muted: 35 22% 76%;
+  --sidebar-border: 22 24% 38%;
+  --sidebar-accent: 92 24% 66%;   /* sage, lifted for the lighter sidebar */
   --sidebar-accent-foreground: 22 36% 12%;
-  --sidebar-active: 22 30% 25%;
+  --sidebar-active: 22 26% 38%;
 }
 
 @theme inline {
