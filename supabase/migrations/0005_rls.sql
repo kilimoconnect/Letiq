@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0005: Row Level Security
+-- Letiq ERP - Migration 0005: Row Level Security
 -- =============================================================================
 -- Model:
 --   * Reads  : a user may read rows for companies they are assigned to

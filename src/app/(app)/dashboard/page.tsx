@@ -136,7 +136,7 @@ export default async function DashboardPage() {
 
   return (
     <div>
-      <PageHeader title={`Welcome${user.fullName ? `, ${user.fullName.split(" ")[0]}` : ""}`} description={`${company?.name ?? "Neriah ERP"} · Today ${formatDate(today)}`} />
+      <PageHeader title={`Welcome${user.fullName ? `, ${user.fullName.split(" ")[0]}` : ""}`} description={`${company?.name ?? "Letiq ERP"} · Today ${formatDate(today)}`} />
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((s) => {

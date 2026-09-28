@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0020: Phase 4 reporting functions (journal-driven)
+-- Letiq ERP - Migration 0020: Phase 4 reporting functions (journal-driven)
 -- =============================================================================
 -- All financial reports are built on these. net = debit - credit; a report
 -- presents net>0 as a debit balance and net<0 as a credit balance. Reversal

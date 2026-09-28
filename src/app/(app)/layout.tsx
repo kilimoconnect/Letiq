@@ -11,7 +11,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   const companyId = user.defaultCompanyId ?? user.companyIds[0] ?? null;
   let companyName =
-    process.env.NEXT_PUBLIC_COMPANY_NAME ?? "Neriah Global Group of Companies Limited";
+    process.env.NEXT_PUBLIC_COMPANY_NAME ?? "Letiq Limited";
   let branches: BranchOption[] = [];
 
   if (companyId) {

@@ -35,7 +35,7 @@ async function main() {
   await db.connect();
   await db.query("begin");
   try {
-    const company = await scalar<string>(db, "select id from companies where code='NERIAH'", []);
+    const company = await scalar<string>(db, "select id from companies where code='LETIQ'", []);
     const branch = await scalar<string>(db, "select id from branches where company_id=$1 and code='HQ'", [company]);
     const owner = await scalar<string>(db, "select id from user_profiles where is_primary_owner", []);
     const cash = await scalar<string>(db, "select id from payment_accounts where company_id=$1 and code='CASH'", [company]);

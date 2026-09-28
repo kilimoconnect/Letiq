@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0012: fix remaining variable/column name collisions
+-- Letiq ERP - Migration 0012: fix remaining variable/column name collisions
 -- =============================================================================
 -- recalc_sale (outstanding) and post_sales_return (net_total/tax_total/total/
 -- cogs_restored) declared locals with the same names as the columns they

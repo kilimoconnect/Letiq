@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0017: Phase 3 Row Level Security
+-- Letiq ERP - Migration 0017: Phase 3 Row Level Security
 -- =============================================================================
 -- Company-scoped reads; no client write policies (all mutations go through
 -- service-role server actions that verify user/permission/branch access).

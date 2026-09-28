@@ -38,7 +38,7 @@ async function main() {
   await db.connect();
   await db.query("begin");
   try {
-    const co = await one<string>(db, "select id from companies where code='NERIAH'");
+    const co = await one<string>(db, "select id from companies where code='LETIQ'");
     const owner = await one<string>(db, "select id from user_profiles where is_primary_owner");
     const br = await one<string>(db, "select id from branches where company_id=$1 and code='HQ'", [co]);
     const cust = await one<string>(db, "select id from customers where company_id=$1 and code='WALK-IN'", [co]);

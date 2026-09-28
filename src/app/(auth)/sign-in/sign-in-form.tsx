@@ -32,19 +32,19 @@ export function SignInForm({ redirectTo }: { redirectTo?: string }) {
   return (
     <div className="space-y-6">
       <div className="flex flex-col items-center gap-3 text-center">
-        <div className="rounded-2xl bg-white p-3 shadow-md">
+        <div className="rounded-2xl bg-white px-5 py-4 shadow-md">
           <Image
-            src="/logo.jpg"
-            alt="Neriah Global Agrobusiness Solution"
-            width={1080}
-            height={964}
+            src="/logo.png"
+            alt="Letiq Limited"
+            width={2400}
+            height={712}
             priority
-            className="h-24 w-auto"
+            className="h-16 w-auto"
           />
         </div>
-        <h1 className="text-lg font-semibold text-sidebar-foreground">Neriah ERP</h1>
+        <h1 className="text-lg font-semibold text-sidebar-foreground">Letiq ERP</h1>
         <p className="text-sm text-sidebar-muted">
-          Neriah Global Group of Companies Limited
+          Letiq Limited
         </p>
       </div>
 
@@ -66,7 +66,7 @@ export function SignInForm({ redirectTo }: { redirectTo?: string }) {
                 type="email"
                 autoComplete="email"
                 required
-                placeholder="you@neriahglobal.co.tz"
+                placeholder="you@company.com"
               />
             </div>
             <div className="space-y-1.5">

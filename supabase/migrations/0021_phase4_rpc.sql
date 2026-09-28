@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0021: Phase 4 posting functions
+-- Letiq ERP - Migration 0021: Phase 4 posting functions
 -- =============================================================================
 
 set check_function_bodies = off;

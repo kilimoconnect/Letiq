@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0006: Phase 2 inventory ledger & costing
+-- Letiq ERP - Migration 0006: Phase 2 inventory ledger & costing
 -- =============================================================================
 -- Weighted-average cost per (company, branch, product). The stock_movements
 -- ledger is the immutable source of truth; stock_balances is a maintained

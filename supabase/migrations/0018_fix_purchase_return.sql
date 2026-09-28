@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0018: fix post_purchase_return var/column collision
+-- Letiq ERP - Migration 0018: fix post_purchase_return var/column collision
 -- =============================================================================
 -- Locals payable_reduction / credit_amount collided with the purchase_returns
 -- columns of the same name in the final UPDATE. Renamed to v_payred / v_credit.

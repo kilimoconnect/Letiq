@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0009: Phase 2 atomic posting functions (RPCs)
+-- Letiq ERP - Migration 0009: Phase 2 atomic posting functions (RPCs)
 -- =============================================================================
 -- Each posting operation runs inside a single function call (one transaction),
 -- locks required rows, recalculates totals on the server, and writes stock,

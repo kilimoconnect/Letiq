@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0011: fix post_sale variable/column name collision
+-- Letiq ERP - Migration 0011: fix post_sale variable/column name collision
 -- =============================================================================
 -- The previous post_sale used local variables named identically to sales
 -- columns (subtotal, net_total, tax_total, cogs_total), which made the final

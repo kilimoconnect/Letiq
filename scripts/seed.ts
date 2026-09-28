@@ -2,8 +2,8 @@ import { createDbClient } from "./db";
 import { PERMISSION_DEFS, ROLE_DEFS } from "../src/lib/auth/permissions";
 import type { Client } from "pg";
 
-const COMPANY_CODE = "NERIAH";
-const COMPANY_NAME = "Neriah Global Group of Companies Limited";
+const COMPANY_CODE = "LETIQ";
+const COMPANY_NAME = "Letiq Limited";
 
 interface CoaSeed {
   code: string;

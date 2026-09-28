@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0004: Immutable audit log
+-- Letiq ERP - Migration 0004: Immutable audit log
 -- =============================================================================
 
 create table if not exists public.audit_logs (

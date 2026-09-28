@@ -1,6 +1,6 @@
-# Neriah ERP
+# Letiq ERP
 
-ERP and accounting system for **Neriah Global Group of Companies Limited**.
+ERP and accounting system for **Letiq Limited**.
 
 This repository implements **Phase 1 — System Foundation** (auth, RBAC, master data),
 **Phase 2 — Sales, Customer Payments, Inventory & Kardex**, and **Phase 3 — Purchases,
@@ -9,7 +9,7 @@ Payment-Account Ledgers**. Full financial statements, bank reconciliation, manua
 budgets, payroll and multi-currency are intentionally **deferred to Phase 4**.
 
 - Base currency: **TZS** · Timezone: **Africa/Dar_es_Salaam** · Dates: **DD/MM/YYYY**
-- Multi-company ready (starts with one company: `NERIAH`).
+- Multi-company ready (starts with one company: `LETIQ`).
 
 ## Tech stack
 
@@ -80,7 +80,7 @@ Idempotent — safe to run repeatedly.
 npm run db:seed
 ```
 
-Seeds: all permissions & the 6 default roles; company `NERIAH`; branch `HQ` (head office);
+Seeds: all permissions & the 6 default roles; company `LETIQ`; branch `HQ` (head office);
 units (Piece, Litre, Kilogram, Bag, Carton); a hierarchical chart of accounts; tax codes
 (VAT 18%, Zero, Exempt); payment accounts (Cash, NMB, CRDB, MIX, M-Pesa); the protected
 `WALK-IN` customer; document-number sequences; and the current-year accounting period.

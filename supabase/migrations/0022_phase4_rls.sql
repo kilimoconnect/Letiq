@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0022: Phase 4 Row Level Security
+-- Letiq ERP - Migration 0022: Phase 4 Row Level Security
 -- =============================================================================
 -- Company-scoped reads; no client write policies (all mutations via service-
 -- role server actions that verify user/permission). Posted journals remain

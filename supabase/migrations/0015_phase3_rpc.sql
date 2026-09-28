@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0015: Phase 3 atomic posting functions
+-- Letiq ERP - Migration 0015: Phase 3 atomic posting functions
 -- =============================================================================
 -- One transaction per posting op: locks rows, recalculates on the server,
 -- writes document + payments + payable + stock/kardex + balanced journal +

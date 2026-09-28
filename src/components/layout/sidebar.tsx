@@ -130,19 +130,19 @@ export function SidebarBrand({ collapsed }: { collapsed: boolean }) {
         collapsed && "justify-center px-0",
       )}
     >
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white">
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md">
         <Image
-          src="/logo.jpg"
-          alt="Neriah Global"
-          width={1080}
-          height={964}
-          className="h-full w-full object-contain p-0.5"
+          src="/icon.png"
+          alt="Letiq Limited"
+          width={1024}
+          height={1024}
+          className="h-full w-full object-contain"
         />
       </div>
       {!collapsed && (
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-white">Neriah ERP</p>
-          <p className="truncate text-[11px] text-sidebar-muted">Group of Companies Limited</p>
+          <p className="truncate text-sm font-semibold text-white">Letiq ERP</p>
+          <p className="truncate text-[11px] text-sidebar-muted">Letiq Limited</p>
         </div>
       )}
     </div>

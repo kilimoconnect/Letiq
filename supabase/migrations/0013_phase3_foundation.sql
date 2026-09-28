@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0013: Phase 3 foundation
+-- Letiq ERP - Migration 0013: Phase 3 foundation
 --   - recoverable-VAT flag on tax codes
 --   - payment-account overdraft settings
 --   - a dedicated ledger account per payment account (so per-account balances

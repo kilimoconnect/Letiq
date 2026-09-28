@@ -6,7 +6,7 @@ import { createDbClient } from "./db";
 config({ path: ".env.local" });
 config();
 
-const COMPANY_CODE = "NERIAH";
+const COMPANY_CODE = "LETIQ";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function findAuthUserByEmail(

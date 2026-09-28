@@ -35,7 +35,7 @@ export function AppShell({
 
   React.useEffect(() => {
     try {
-      setCollapsed(localStorage.getItem("neriah_sidebar_collapsed") === "1");
+      setCollapsed(localStorage.getItem("letiq_sidebar_collapsed") === "1");
     } catch {
       /* ignore */
     }
@@ -45,7 +45,7 @@ export function AppShell({
     setCollapsed((c) => {
       const next = !c;
       try {
-        localStorage.setItem("neriah_sidebar_collapsed", next ? "1" : "0");
+        localStorage.setItem("letiq_sidebar_collapsed", next ? "1" : "0");
       } catch {
         /* ignore */
       }

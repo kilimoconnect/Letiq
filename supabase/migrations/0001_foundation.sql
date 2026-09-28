@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0001: Foundation (extensions, helpers, triggers)
+-- Letiq ERP - Migration 0001: Foundation (extensions, helpers, triggers)
 -- =============================================================================
 -- Idempotent. Safe to run more than once.
 

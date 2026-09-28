@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0010: Phase 2 Row Level Security
+-- Letiq ERP - Migration 0010: Phase 2 Row Level Security
 -- =============================================================================
 -- Reads are scoped to companies the user can access (Owner = all). No client
 -- write policies exist: every mutation goes through service-role server actions

@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0007: Phase 2 accounting (journals) + extra accounts
+-- Letiq ERP - Migration 0007: Phase 2 accounting (journals) + extra accounts
 -- =============================================================================
 
 set check_function_bodies = off;

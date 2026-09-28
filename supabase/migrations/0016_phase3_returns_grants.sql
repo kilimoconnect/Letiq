@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0016: Purchase returns + Phase 3 grants
+-- Letiq ERP - Migration 0016: Purchase returns + Phase 3 grants
 -- =============================================================================
 
 set check_function_bodies = off;

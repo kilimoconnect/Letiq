@@ -8,10 +8,10 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: {
-    default: "Neriah ERP",
-    template: "%s · Neriah ERP",
+    default: "Letiq ERP",
+    template: "%s · Letiq ERP",
   },
-  description: "ERP and accounting system for Neriah Global Group of Companies Limited",
+  description: "ERP and accounting system for Letiq Limited",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

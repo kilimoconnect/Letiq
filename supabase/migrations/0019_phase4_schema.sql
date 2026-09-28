@@ -1,5 +1,5 @@
 -- =============================================================================
--- Neriah ERP - Migration 0019: Phase 4 accounting schema
+-- Letiq ERP - Migration 0019: Phase 4 accounting schema
 -- =============================================================================
 
 set check_function_bodies = off;

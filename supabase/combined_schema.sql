@@ -1,11 +1,11 @@
--- Neriah ERP - combined schema (migrations 0001-0005).
+-- Letiq ERP - combined schema (migrations 0001-0005).
 -- Paste into Supabase SQL Editor and Run. Idempotent/safe to re-run.
 
 -- ============================================================
 -- migrations/0001_foundation.sql
 -- ============================================================
 -- =============================================================================
--- Neriah ERP - Migration 0001: Foundation (extensions, helpers, triggers)
+-- Letiq ERP - Migration 0001: Foundation (extensions, helpers, triggers)
 -- =============================================================================
 -- Idempotent. Safe to run more than once.
 
@@ -193,7 +193,7 @@ $$;
 -- migrations/0002_identity_rbac.sql
 -- ============================================================
 -- =============================================================================
--- Neriah ERP - Migration 0002: Companies, Branches, Identity & RBAC
+-- Letiq ERP - Migration 0002: Companies, Branches, Identity & RBAC
 -- =============================================================================
 
 -- ---------------------------------------------------------------------------
@@ -359,7 +359,7 @@ create trigger trg_user_profiles_updated before update on public.user_profiles
 -- migrations/0003_master_data.sql
 -- ============================================================
 -- =============================================================================
--- Neriah ERP - Migration 0003: Master data
+-- Letiq ERP - Migration 0003: Master data
 -- =============================================================================
 
 -- ---------------------------------------------------------------------------
@@ -733,7 +733,7 @@ end $$;
 -- migrations/0004_audit.sql
 -- ============================================================
 -- =============================================================================
--- Neriah ERP - Migration 0004: Immutable audit log
+-- Letiq ERP - Migration 0004: Immutable audit log
 -- =============================================================================
 
 create table if not exists public.audit_logs (
@@ -785,7 +785,7 @@ create trigger trg_audit_logs_no_delete
 -- migrations/0005_rls.sql
 -- ============================================================
 -- =============================================================================
--- Neriah ERP - Migration 0005: Row Level Security
+-- Letiq ERP - Migration 0005: Row Level Security
 -- =============================================================================
 -- Model:
 --   * Reads  : a user may read rows for companies they are assigned to
