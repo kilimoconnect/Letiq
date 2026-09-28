@@ -42,10 +42,6 @@ export function SignInForm({ redirectTo }: { redirectTo?: string }) {
             className="h-16 w-auto"
           />
         </div>
-        <h1 className="text-lg font-semibold text-sidebar-foreground">Letiq ERP</h1>
-        <p className="text-sm text-sidebar-muted">
-          Letiq Limited
-        </p>
       </div>
 
       <Card>
