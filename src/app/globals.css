@@ -2,56 +2,59 @@
 
 /* =========================================================================
    Letiq ERP design system
-   Light work surfaces, dark navy sidebar, restrained blue accent.
+   Taken from the Letiq Limited logo: deep brown (#5C3D2B), sage leaf
+   (#8FA27E) and warm cream (#F1ECE1). Warm light work surfaces, deep brown
+   sidebar, brown primary with sage accents.
    ========================================================================= */
 
 :root {
   --radius: 0.5rem;
 
   /* Work surfaces */
-  --background: 210 20% 98%;      /* app canvas (very light grey) */
-  --foreground: 222 34% 15%;      /* primary text (near navy) */
+  --background: 40 33% 97%;       /* app canvas (warm off-white) */
+  --foreground: 22 30% 16%;       /* primary text (dark brown) */
 
   --card: 0 0% 100%;
-  --card-foreground: 222 34% 15%;
+  --card-foreground: 22 30% 16%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222 34% 15%;
+  --popover-foreground: 22 30% 16%;
 
-  /* Brand blue accent */
-  --primary: 214 84% 44%;
-  --primary-foreground: 0 0% 100%;
+  /* Brand brown */
+  --primary: 22 36% 27%;          /* #5C3D2B */
+  --primary-foreground: 41 38% 95%;
 
-  --secondary: 214 25% 94%;
-  --secondary-foreground: 222 34% 20%;
+  --secondary: 41 30% 92%;        /* cream */
+  --secondary-foreground: 22 30% 20%;
 
-  --muted: 214 20% 95%;
-  --muted-foreground: 215 16% 42%;
+  --muted: 40 25% 94%;
+  --muted-foreground: 25 12% 40%;
 
-  --accent: 214 60% 96%;
-  --accent-foreground: 214 84% 34%;
+  /* Sage leaf */
+  --accent: 92 22% 92%;
+  --accent-foreground: 92 24% 26%;
 
-  --destructive: 0 72% 46%;
+  --destructive: 4 66% 45%;
   --destructive-foreground: 0 0% 100%;
 
-  --success: 152 62% 36%;
+  --success: 100 28% 34%;
   --success-foreground: 0 0% 100%;
 
-  --warning: 38 92% 46%;
-  --warning-foreground: 40 90% 12%;
+  --warning: 36 88% 44%;
+  --warning-foreground: 36 90% 12%;
 
-  --border: 214 22% 88%;
-  --input: 214 22% 86%;
-  --ring: 214 84% 44%;
+  --border: 36 20% 86%;
+  --input: 36 18% 82%;
+  --ring: 22 36% 35%;
 
-  /* Dark navy sidebar (fixed regardless of surface theme) */
-  --sidebar: 222 47% 13%;
-  --sidebar-foreground: 214 30% 82%;
-  --sidebar-muted: 215 20% 60%;
-  --sidebar-border: 222 30% 22%;
-  --sidebar-accent: 214 84% 52%;
-  --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-active: 222 40% 20%;
+  /* Deep brown sidebar (fixed regardless of surface theme) */
+  --sidebar: 22 36% 17%;
+  --sidebar-foreground: 40 30% 86%;
+  --sidebar-muted: 35 14% 64%;
+  --sidebar-border: 22 26% 25%;
+  --sidebar-accent: 92 20% 57%;   /* #8FA27E sage */
+  --sidebar-accent-foreground: 22 36% 12%;
+  --sidebar-active: 22 30% 25%;
 }
 
 @theme inline {

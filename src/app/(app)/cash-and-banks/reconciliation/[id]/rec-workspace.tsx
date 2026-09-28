@@ -152,7 +152,7 @@ function AdjustDialog({ line, accounts, recId, onClose, onDone }: { line: StmtLi
 
 function ConfirmDialogShell({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/50 p-4" onClick={onClose}>
       <div className="w-full max-w-md rounded-lg border border-border bg-card p-6 shadow-lg" onClick={(e) => e.stopPropagation()}>
         <h3 className="mb-3 text-lg font-semibold">{title}</h3>
         {children}
