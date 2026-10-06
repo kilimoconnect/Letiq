@@ -315,6 +315,7 @@ export const RESOURCES: Record<string, ResourceConfig> = {
       { key: "sku", label: "SKU", type: "code" },
       { key: "name", label: "Name" },
       { key: "category_id", label: "Category", type: "ref", refKey: "categories" },
+      { key: "brand_id", label: "Brand", type: "ref", refKey: "brands" },
       { key: "selling_price", label: "Selling Price", type: "money", align: "right" },
       { key: "track_inventory", label: "Tracked", type: "boolean" },
     ],

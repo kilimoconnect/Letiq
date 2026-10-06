@@ -15,8 +15,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
+import { ProductPicker } from "@/components/common/product-picker";
 
-export interface ProductOpt { id: string; sku: string; name: string; selling_price: number; tax_code_id: string | null; track_inventory: boolean }
+export interface ProductOpt {
+  id: string; sku: string; barcode: string | null; name: string; selling_price: number; tax_code_id: string | null;
+  track_inventory: boolean; category: string | null; brand: string | null;
+}
 export interface TaxOpt { id: string; name: string; rate: number; is_inclusive: boolean }
 export interface AccountOpt { id: string; code: string; name: string }
 export interface CustomerOpt { id: string; code: string; name: string; is_protected: boolean }
@@ -69,10 +73,27 @@ export function SaleForm({
   const paid = round2(payments.reduce((s, p) => s + Number(p.amount || 0), 0));
   const outstanding = round2(totals.grand - paid);
 
+  // Stock guard: total requested per tracked product (across lines) must not
+  // exceed what the branch has. The server re-checks at posting.
+  const requested = new Map<string, number>();
+  for (const l of lines) {
+    if (l.product_id) requested.set(l.product_id, (requested.get(l.product_id) ?? 0) + Number(l.quantity || 0));
+  }
+  const shortOf = (pid: string) => {
+    const p = prodMap.get(pid);
+    if (!p || !p.track_inventory) return false;
+    return (requested.get(pid) ?? 0) > (stock[pid] ?? 0);
+  };
+
   async function submit(post: boolean) {
     setError(null);
     const validLines = lines.filter((l) => l.product_id && Number(l.quantity) > 0);
     if (validLines.length === 0) { setError("Add at least one product line."); return; }
+    const short = [...new Set(validLines.map((l) => l.product_id))].filter(shortOf);
+    if (short.length > 0) {
+      setError(`Not enough stock for: ${short.map((pid) => `${prodMap.get(pid)?.name} (available ${stock[pid] ?? 0})`).join(", ")}.`);
+      return;
+    }
     if (post && outstanding > 0 && !dueDate) { setError("A due date is required when there is an outstanding balance."); return; }
 
     const input: SaleDraftInput = {
@@ -138,16 +159,17 @@ export function SaleForm({
                 <tbody>
                   {lines.map((l, i) => {
                     const avail = stock[l.product_id];
+                    const tracked = prodMap.get(l.product_id)?.track_inventory !== false;
+                    const short = l.product_id ? shortOf(l.product_id) : false;
                     return (
-                      <tr key={l.key} className="border-t border-border">
-                        <td className="px-1 py-1 min-w-[180px]">
-                          <Select value={l.product_id} onValueChange={(v) => onPickProduct(l.key, v)}>
-                            <SelectTrigger className="h-8"><SelectValue placeholder="Product" /></SelectTrigger>
-                            <SelectContent>{products.map((p) => <SelectItem key={p.id} value={p.id}>{p.sku} — {p.name}</SelectItem>)}</SelectContent>
-                          </Select>
+                      <tr key={l.key} className="border-t border-border align-top">
+                        <td className="px-1 py-1 min-w-[280px]">
+                          <ProductPicker products={products} value={l.product_id} available={stock}
+                            onChange={(v) => onPickProduct(l.key, v)} />
+                          {short && <p className="px-1 pt-0.5 text-xs font-medium text-destructive">Only {avail ?? 0} in stock</p>}
                         </td>
-                        <td className="px-2 py-1 text-right tabular-nums text-xs text-muted-foreground">{l.product_id ? (avail ?? 0) : "—"}</td>
-                        <td className="px-1 py-1"><Input className="h-8 w-20 text-right tabular-nums" type="number" min="0" step="0.0001" value={l.quantity} onChange={(e) => setLine(l.key, { quantity: e.target.value })} /></td>
+                        <td className="px-2 py-2 text-right tabular-nums text-xs text-muted-foreground">{!l.product_id ? "—" : tracked ? (avail ?? 0) : "n/a"}</td>
+                        <td className="px-1 py-1"><Input className={`h-8 w-20 text-right tabular-nums ${short ? "border-destructive focus-visible:ring-destructive" : ""}`} type="number" min="0" step="0.0001" value={l.quantity} onChange={(e) => setLine(l.key, { quantity: e.target.value })} /></td>
                         <td className="px-1 py-1"><Input className="h-8 w-24 text-right tabular-nums" type="number" min="0" step="0.01" value={l.unit_price} onChange={(e) => setLine(l.key, { unit_price: e.target.value })} /></td>
                         <td className="px-1 py-1"><Input className="h-8 w-20 text-right tabular-nums" type="number" min="0" step="0.01" value={l.discount} onChange={(e) => setLine(l.key, { discount: e.target.value })} /></td>
                         <td className="px-1 py-1 min-w-[120px]">

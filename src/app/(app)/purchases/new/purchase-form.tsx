@@ -14,8 +14,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
+import { ProductPicker } from "@/components/common/product-picker";
 
-export interface ProductOpt { id: string; sku: string; name: string; tax_code_id: string | null }
+export interface ProductOpt {
+  id: string; sku: string; barcode: string | null; name: string; tax_code_id: string | null;
+  category: string | null; brand: string | null;
+}
 export interface TaxOpt { id: string; name: string; rate: number; is_inclusive: boolean }
 export interface AccountOpt { id: string; name: string }
 export interface SupplierOpt { id: string; code: string; name: string }
@@ -104,12 +108,10 @@ export function PurchaseForm({
               </thead>
               <tbody>
                 {lines.map((l, i) => (
-                  <tr key={l.key} className="border-t border-border">
-                    <td className="px-1 py-1 min-w-[180px]">
-                      <Select value={l.product_id} onValueChange={(v) => { const p = prodMap.get(v); setLine(l.key, { product_id: v, tax_code_id: p?.tax_code_id ?? NONE }); }}>
-                        <SelectTrigger className="h-8"><SelectValue placeholder="Product" /></SelectTrigger>
-                        <SelectContent>{products.map((p) => <SelectItem key={p.id} value={p.id}>{p.sku} — {p.name}</SelectItem>)}</SelectContent>
-                      </Select>
+                  <tr key={l.key} className="border-t border-border align-top">
+                    <td className="px-1 py-1 min-w-[280px]">
+                      <ProductPicker products={products} value={l.product_id}
+                        onChange={(v) => { const p = prodMap.get(v); setLine(l.key, { product_id: v, tax_code_id: p?.tax_code_id ?? NONE }); }} />
                     </td>
                     <td className="px-1 py-1"><Input className="h-8 w-20 text-right tabular-nums" type="number" min="0" step="0.0001" value={l.quantity} onChange={(e) => setLine(l.key, { quantity: e.target.value })} /></td>
                     <td className="px-1 py-1"><Input className="h-8 w-24 text-right tabular-nums" type="number" min="0" step="0.01" value={l.unit_cost} onChange={(e) => setLine(l.key, { unit_cost: e.target.value })} /></td>
